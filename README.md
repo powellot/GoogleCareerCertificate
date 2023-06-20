@@ -35,4 +35,4 @@ Taking this into consideration, I chose to complete the BellaBeat Case Study.
 
 ## Copy of Certification
 [PDF Version of Certificate](https://coursera.org/share/20480cf95f6013c8bbfbbcda1f836789)
-![Google Career Certificate - Owen Powell](https://github.com/powellot/GoogleCareerCertificate/Resources/Certifcate.PNG)
+![Google Career Certificate - Owen Powell](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/Certifcate.PNG)
