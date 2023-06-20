@@ -31,7 +31,7 @@ This is the track I chose initially to complete my certification and demonstrate
 
 Taking this into consideration, I chose to complete the BellaBeat Case Study.
 
-[BellaBeat Case Study](https://github.com/powellot/GoogleCareerCertificate)
+[BellaBeat Case Study](https://github.com/powellot/GoogleCareerCertificate/tree/main/BellaBeat%20Case%20Study)
 
 ## Copy of Certification
 [PDF Version of Certificate](https://coursera.org/share/20480cf95f6013c8bbfbbcda1f836789)
