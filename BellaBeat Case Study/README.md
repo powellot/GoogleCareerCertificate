@@ -14,3 +14,22 @@ We have been tasked with answering three questions:
   2. How could these trends apply to Bellabeat customers?
   3. How could these trends help influence Bellabeat's marketing strategy?
 ```
+
+In order to effectively and concisely answer these questions with relevant and accurate data, I will be using the 6 step data analysis process: ask, prepare, analyze, share, and act.
+
+## Stage 1: Ask
+### Background
+
+> Bellabeat is a wellness company founded by Urška Sršen and Sandro Mur in 2014. It is best known for its Leaf smart jewelry wearable line. The company has offices in San Francisco, Zagreb and Hong Kong. [Wikipedia](https://en.wikipedia.org/wiki/Bellabeat)
+
+The overall goal of this project is to analyze smart device usage to gain insight into how non-Bellabeat smart devices are being used to guide the Bellabeat marketing strategy.
+
+In addition to answering the three questions listed in the [scenario]() section of this write-up, I need to be able to deliver the following:
+
+```
+  1. A summary of the business task.
+  2. A description of the data sources used.
+  3. Documentation of any cleaning or manipulation of data.
+  4. A summary of the analysis.
+  5. High-level content recommendations based on the analysis.
+```
