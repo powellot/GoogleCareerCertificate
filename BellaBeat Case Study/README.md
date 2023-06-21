@@ -70,7 +70,18 @@ Using this check, we can see the Fitbit data only meets one of our five criteria
 
 ## Stage 3: Process
 
-Feeling more comfortable working with programming languages as opposed to spreadsheets, R programming has been used for this analysis in RStudio Cloud.
+As there is a relatively large number of .csv files and R or Python are better suited than spreadsheets for this analysis, and R programming has been used for this particular case study in RStudio Cloud.
+
+This section is particularly long as it goes into every step of my preparation for analysis. For reader convenience, a table of contents for this section has been provided below:
+#### Section Links
+  - [Installing & Loading Common Packages & Libraries](#installing--loading-common-packages--libraries)
+  - [Importing Data Into R](#importing-data-into-r)
+  - [Exploring Key Tables](#exploring-key-tables)
+  - [Data Cleaning](#data-cleaning)
+    - [Checking Data Values](#checking-for-data-values)
+    - [Checking for Missing Values](#checking-for-missing-values)
+    - [Checking Number of Unique Participiants](#checking-number-of-unique-participants)
+  - [Data Summary](#data-summary)
 
 ### Installing & Loading Common Packages & Libraries
 '##' *Indicates a console output.*
@@ -192,4 +203,48 @@ display.brewer.pal(5, "Set2")
 
 *The brewer color pallet I will be using for this analysis.*
 
-### Importing data into R
+### Importing Data Into R
+To begin, I created two data frames 'day_activity' and 'sleep_day' from the CSV files from the datasets.
+```r
+daily_activity <- read.csv("dailyActivity_merged.csv")
+sleep_day <- read.csv("sleepDay_merged.csv")
+```
+### Exploring Key Tables
+This was to check the basic information of each dataset. Namely the column names, number of observations, data type, formatting, and be sure there were no missing values.
+
+Taking a look at the daily_activity data:
+```r
+head(daily_activity)
+
+##           Id ActivityDate TotalSteps TotalDistance TrackerDistance LoggedActivitiesDistance VeryActiveDistance
+## 1 1503960366    4/12/2016      13162          8.50            8.50                        0               1.88
+## 2 1503960366    4/13/2016      10735          6.97            6.97                        0               1.57
+## 3 1503960366    4/14/2016      10460          6.74            6.74                        0               2.44
+## 4 1503960366    4/15/2016       9762          6.28            6.28                        0               2.14
+## 5 1503960366    4/16/2016      12669          8.16            8.16                        0               2.71
+## 6 1503960366    4/17/2016       9705          6.48            6.48                        0               3.19
+##   ModeratelyActiveDistance LightActiveDistance SedentaryActiveDistance VeryActiveMinutes FairlyActiveMinutes
+## 1                     0.55                6.06                       0                25                  13
+## 2                     0.69                4.71                       0                21                  19
+## 3                     0.40                3.91                       0                30                  11
+## 4                     1.26                2.83                       0                29                  34
+## 5                     0.41                5.04                       0                36                  10
+## 6                     0.78                2.51                       0                38                  20
+##   LightlyActiveMinutes SedentaryMinutes Calories
+## 1                  328              728     1985
+## 2                  217              776     1797
+## 3                  181             1218     1776
+## 4                  209              726     1745
+## 5                  221              773     1863
+## 6                  164              539     1728
+```
+
+Identifying all of the column names in the 'daily_activity' data:
+```r
+colnames(daily_activity)
+
+##  [1] "Id"                       "ActivityDate"             "TotalSteps"               "TotalDistance"           
+##  [5] "TrackerDistance"          "LoggedActivitiesDistance" "VeryActiveDistance"       "ModeratelyActiveDistance"
+##  [9] "LightActiveDistance"      "SedentaryActiveDistance"  "VeryActiveMinutes"        "FairlyActiveMinutes"     
+## [13] "LightlyActiveMinutes"     "SedentaryMinutes"         "Calories"
+```
