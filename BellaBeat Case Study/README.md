@@ -212,7 +212,7 @@ sleep_day <- read.csv("sleepDay_merged.csv")
 ### Exploring Key Tables
 This was to check the basic information of each dataset. Namely the column names, number of observations, data type, formatting, and be sure there were no missing values.
 
-Taking a look at the daily_activity data:
+Taking a look at the 'daily_activity' data:
 ```r
 head(daily_activity)
 
@@ -248,3 +248,25 @@ colnames(daily_activity)
 ##  [9] "LightActiveDistance"      "SedentaryActiveDistance"  "VeryActiveMinutes"        "FairlyActiveMinutes"     
 ## [13] "LightlyActiveMinutes"     "SedentaryMinutes"         "Calories"
 ```
+
+Taking a look at the 'sleep_day' data:
+```r
+head(sleep_day)
+
+##           Id              SleepDay TotalSleepRecords TotalMinutesAsleep TotalTimeInBed
+## 1 1503960366 4/12/2016 12:00:00 AM                 1                327            346
+## 2 1503960366 4/13/2016 12:00:00 AM                 2                384            407
+## 3 1503960366 4/15/2016 12:00:00 AM                 1                412            442
+## 4 1503960366 4/16/2016 12:00:00 AM                 2                340            367
+## 5 1503960366 4/17/2016 12:00:00 AM                 1                700            712
+## 6 1503960366 4/19/2016 12:00:00 AM                 1                304            320
+```
+
+Identifying all of the column names in the 'sleep_day' data:
+```r
+colnames(sleep_day)
+
+## [1] "Id"                 "SleepDay"           "TotalSleepRecords"  "TotalMinutesAsleep" "TotalTimeInBed"  
+```
+
+Using this information, I was able to see that the "Id" field is shared between the two datasets meaning I can use that information to merge the two datasets.
