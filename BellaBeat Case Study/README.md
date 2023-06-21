@@ -59,7 +59,7 @@ A good data source is reliable, original, comprehensive, current, and cited (ROC
     - Unreliable due to the small sample size.
   - [ ] Original
     - Unoriginal data as it was collected by a third party.
-  - [x] Comprehensive
+  - [X] Comprehensive
     - Collected data matches Bellabeat products.
   - [ ] Current
     - Not current as data was collected over seven years ago.
