@@ -176,10 +176,20 @@ install.packages('RColorBrewer')
 library(RColorBrewer)
 ```
 
-In order to make the findings of the analysis more accessible, I then selected a color-blind-friendly color pallet using RColorBrewer.
+In order to make the findings of the analysis more accessible, I then selected a colorblind-friendly color pallet using RColorBrewer. I wanted a vibrant, high-contrast, limited color pallet in order to make sure that all viewers of the graphs and charts are easily able to distinguish between categories.
 
 ```r
 display.brewer.all(colorblindFriendly = T)
 ```
-![RColorBrewer Colorblind Pallets]()
+![RColorBrewer Colorblind Pallets](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/brewerColorBlind.png)
 
+*All brewer color pallets that are colorblind-friendly.*
+
+```r
+display.brewer.pal(5, "Set2")
+```
+![RColorBrewer pallet I use](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/brewerColorBlindPallet.png)
+
+*The brewer color pallet I will be using for this analysis.*
+
+### Importing data into R
