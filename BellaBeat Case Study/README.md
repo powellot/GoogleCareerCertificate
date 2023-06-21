@@ -5,7 +5,7 @@
 # Bellabeat Case Study 
 ### How can a wellness company play it smart?
 
-### Table of Contents
+### Table of Contents                     
   - [Scenario](#scenario)
   - [Stage 1: Ask](#stage-1-ask)
   - [Stage 2: Prepare](#stage-2-prepare)
@@ -69,3 +69,54 @@ A good data source is reliable, original, comprehensive, current, and cited (ROC
 Using this check, we can see the Fitbit data only meets one of our five criteria to be a good data source. I will continue with my analysis, however, there will be an asterisk so to speak on any conclusions drawn from this dataset as it is unfit for use in a professional setting.
 
 ## Stage 3: Process
+
+Feeling more comfortable working with programming languages as opposed to spreadsheets, R programming has been used for this analysis in RStudio Cloud.
+
+### Installing & Loading Common Packages & Libraries
+'##' *Indicates a console output.*
+
+```r
+install.packages('tidyverse')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+library(tidyverse)
+
+## ── Attaching core tidyverse packages ───────────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.1 
+## ── Conflicts ─────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+```
+```r
+install.packages('here')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+library(here)
+
+## here() starts at /cloud/project
+```
+```r
+install.packages('skimr')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+library(skimr)
+```
+```r
+install.packages('janitor')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
