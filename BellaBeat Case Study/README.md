@@ -55,16 +55,16 @@ At the time of writing, it is June 2023. This data was collected in 2016 meaning
 
 A good data source is reliable, original, comprehensive, current, and cited (ROCCC). Using this to check the Fitbit user data:
 
-  - [ ] Reliable
-    - Unreliable due to the small sample size.
-  - [ ] Original
-    - Unoriginal data as it was collected by a third party.
-  - [X] Comprehensive
-    - Collected data matches Bellabeat products.
-  - [ ] Current
-    - Not current as data was collected over seven years ago.
-  - [ ] Cited
-    - Not cited, third-party data.
+- [ ] Reliable
+  - Unreliable due to the small sample size.
+- [ ] Original
+  - Unoriginal data as it was collected by a third party.
+- [X] Comprehensive
+  - Collected data matches Bellabeat products.
+- [ ] Current
+  - Not current as data was collected over seven years ago.
+- [ ] Cited
+  - Not cited, third-party data.
 
 Using this check, we can see the Fitbit data only meets one of our five criteria to be a good data source. I will continue with my analysis, however, there will be an asterisk so to speak on any conclusions drawn from this dataset as it is unfit for use in a professional setting.
 
