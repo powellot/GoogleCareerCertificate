@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="300" src="https://picsum.photos/460/300">
+  <img width="200" height="200" src="https://picsum.photos/460/300">
 </p>
 
 # Bellabeat Case Study
