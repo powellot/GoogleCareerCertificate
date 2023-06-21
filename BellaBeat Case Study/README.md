@@ -120,3 +120,34 @@ install.packages('janitor')
 ## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
 ## (as ‘lib’ is unspecified)
 ```
+```r
+library(janitor)
+
+## Attaching package: ‘janitor’
+##
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+```
+```r
+install.packages('dplyr')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+library(dplyr)
+
+## Attaching package: ‘dplyr’
+```
+```r
+install.packages('ggplot2')
+
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+
+
+
+
