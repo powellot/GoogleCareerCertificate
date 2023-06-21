@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="300" height="300" src="https://picsum.photos/460/300">
+</p>
+
 # Bellabeat Case Study
 
 ### Scenario
