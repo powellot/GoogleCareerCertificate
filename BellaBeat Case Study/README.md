@@ -113,6 +113,8 @@ install.packages('skimr')
 ```
 ```r
 library(skimr)
+
+## Attaching package: 'skimr'
 ```
 ```r
 install.packages('janitor')
@@ -147,7 +149,37 @@ install.packages('ggplot2')
 ## (as ‘lib’ is unspecified)
 ```
 ```r
+library(ggplot2)
+```
+```r
+install.packages('lubridate')
 
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+## (as ‘lib’ is unspecified)
+```
+```r
+library(lubridate)
 
+## Attaching package: ‘lubridate’
+##
+## The following objects are masked from ‘package:base’:
+##
+##     date, intersect, setdiff, union
+```
+```r
+install.packages('RColorBrewer')
 
+## Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.3’
+##(as ‘lib’ is unspecified)
+```
+```r
+library(RColorBrewer)
+```
+
+In order to make the findings of the analysis more accessible, I then selected a color-blind-friendly color pallet using RColorBrewer.
+
+```r
+display.brewer.all(colorblindFriendly = T)
+```
+![RColorBrewer Colorblind Pallets]()
 
