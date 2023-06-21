@@ -24,7 +24,7 @@ In order to effectively and concisely answer these questions with relevant and a
 
 The overall goal of this project is to analyze smart device usage to gain insight into how non-Bellabeat smart devices are being used to guide the Bellabeat marketing strategy.
 
-In addition to answering the three questions listed in the [scenario]() section of this write-up, I need to be able to deliver the following:
+In addition to answering the three questions listed in the [scenario](#scenario) section of this write-up, I need to be able to deliver the following:
 
 ```
   1. A summary of the business task.
