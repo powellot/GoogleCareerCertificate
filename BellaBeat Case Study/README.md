@@ -10,7 +10,7 @@
   - [Stage 1: Ask](#stage-1-ask)
   - [Stage 2: Prepare](#stage-2-prepare)
   - [Stage 3: Process](#stage-3-process)
-  - [Stage 4: Analyze]()
+  - [Stage 4: Analyze](#stage-4-analyze)
   - [Stage 5: Share]()
   - [Stage 6: Act]()
   
@@ -26,7 +26,7 @@ We have been tasked with answering three questions:
   3. How could these trends help influence Bellabeat's marketing strategy?
 ```
 
-In order to effectively and concisely answer these questions with relevant and accurate data, I will be using the 6 step data analysis process: ask, prepare, analyze, share, and act.
+To effectively and concisely answer these questions with relevant and accurate data, I will be using the 6 step data analysis process: ask, prepare, analyze, share, and act.
 
 ## Stage 1: Ask
 ### Background
@@ -70,7 +70,7 @@ Using this check, we can see the Fitbit data only meets one of our five criteria
 
 ## Stage 3: Process
 
-As there is a relatively large number of .csv files and R or Python are better suited than spreadsheets for this analysis, and R programming has been used for this particular case study in RStudio Cloud.
+As there is a relatively large number of .csv files and R or Python are better suited than spreadsheets for this analysis, R programming has been used for this particular case study in RStudio Cloud.
 
 This section is particularly long as it goes into every step of my preparation for analysis. For reader convenience, a table of contents for this section has been provided below:
 #### Section Links
@@ -78,7 +78,7 @@ This section is particularly long as it goes into every step of my preparation f
   - [Importing Data Into R](#importing-data-into-r)
   - [Exploring Key Tables](#exploring-key-tables)
   - [Data Cleaning](#data-cleaning)
-    - [Checking Data Values](#checking-for-data-values)
+    - [Checking Data Values](#checking-data-values)
     - [Checking for Missing Values](#checking-for-missing-values)
     - [Checking Number of Unique Participiants](#checking-number-of-unique-participants)
   - [Data Summary](#data-summary)
@@ -269,4 +269,67 @@ colnames(sleep_day)
 ## [1] "Id"                 "SleepDay"           "TotalSleepRecords"  "TotalMinutesAsleep" "TotalTimeInBed"  
 ```
 
-Using this information, I was able to see that the "Id" field is shared between the two datasets meaning I can use that information to merge the two datasets.
+Using this information, I could see that the "Id" field is shared between the two datasets meaning I can use that information to merge the two datasets.
+
+### Data Cleaning
+To ensure accuracy when merging the two datasets, I clean the data by checking for missing values, content, duplicates, and misspellings.
+
+#### Checking Data Values
+```r
+str(daily_activity)
+
+## 'data.frame':	940 obs. of  15 variables:
+##  $ Id                      : num  1.5e+09 1.5e+09 1.5e+09 1.5e+09 1.5e+09 ...
+##  $ ActivityDate            : chr  "4/12/2016" "4/13/2016" "4/14/2016" "4/15/2016" ...
+##  $ TotalSteps              : int  13162 10735 10460 9762 12669 9705 13019 15506 10544 9819 ...
+##  $ TotalDistance           : num  8.5 6.97 6.74 6.28 8.16 ...
+##  $ TrackerDistance         : num  8.5 6.97 6.74 6.28 8.16 ...
+##  $ LoggedActivitiesDistance: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ VeryActiveDistance      : num  1.88 1.57 2.44 2.14 2.71 ...
+##  $ ModeratelyActiveDistance: num  0.55 0.69 0.4 1.26 0.41 ...
+##  $ LightActiveDistance     : num  6.06 4.71 3.91 2.83 5.04 ...
+##  $ SedentaryActiveDistance : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ VeryActiveMinutes       : int  25 21 30 29 36 38 42 50 28 19 ...
+##  $ FairlyActiveMinutes     : int  13 19 11 34 10 20 16 31 12 8 ...
+##  $ LightlyActiveMinutes    : int  328 217 181 209 221 164 233 264 205 211 ...
+##  $ SedentaryMinutes        : int  728 776 1218 726 773 539 1149 775 818 838 ...
+##  $ Calories                : int  1985 1797 1776 1745 1863 1728 1921 2035 1786 1775 ...
+```
+```r
+str(sleep_day)
+
+## 'data.frame':	413 obs. of  5 variables:
+ $ Id                : num  1.5e+09 1.5e+09 1.5e+09 1.5e+09 1.5e+09 ...
+ $ SleepDay          : chr  "4/12/2016 12:00:00 AM" "4/13/2016 12:00:00 AM" "4/15/2016 12:00:00 AM" "4/16/2016 12:00:00 AM" ...
+ $ TotalSleepRecords : int  1 2 1 2 1 1 1 1 1 1 ...
+ $ TotalMinutesAsleep: int  327 384 412 340 700 304 360 325 361 430 ...
+ $ TotalTimeInBed    : int  346 407 442 367 712 320 377 364 384 449 ...
+```
+#### Checking for Missing Values
+```r
+which(is.na(daily_activity))
+
+## integer(0)
+```
+```r
+which(is.na(sleep_day))
+
+## integer(0)
+```
+#### Checking Number of Unique Participants
+```r
+n_distinct(daily_activity$Id)
+
+## [1] 33
+```
+```r
+n_distinct(sleep_day$Id)
+
+## [1] 24
+```
+### Data Summary
+From these data points, I learned there are 33 unique user IDs, not the 30 the dataset claimed. Additionally, there are more users in the daily activity data set than in the sleep dataset, 33 and 24, respectively. Finally, the Activity Date is of type char, not Date, and the data set has no missing values.
+
+Now that the data has been cleaned, I can begin my analysis.
+
+## Stage 4: Analyze
