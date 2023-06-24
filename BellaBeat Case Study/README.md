@@ -400,4 +400,21 @@ ggplot(data = daily_activity, aes(x = TotalSteps, y = SedentaryMinutes)) +
 
 ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
-![TotalSteps vs. SedentaryMinutes Graph]()
+![TotalSteps vs. SedentaryMinutes Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/SedentaryVsSteps.png)
+
+This scatterplot shows a weak negative correlation between TotalSteps and SedentaryMinutes. Between 0 and 10,000 steps, we can see the Loess smoothing shows a strong decrease in SedentaryMinutes as TotalSteps increase. With this in mind, there is potential for a Bellabeat device to remind customers to move after a preset amount of time sedentary.
+
+#### The Relationship Between Total Time Asleep and Total Time in Bed
+Key Questions:
+- What relationship exists between time asleep and time in bed?
+    - Is it linear as expected?
+- Are there any unexpected trends?
+- How can this help Bellabeat's marketing efforts?
+
+```r
+ggplot(data = sleep_day, aes(x = TotalMinutesAsleep, y = TotalTimeInBed)) +
+  geom_point(color = "darkgoldenrod2") +
+  geom_smooth(color = "deepskyblue1") 
+
+## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+```
