@@ -328,8 +328,76 @@ n_distinct(sleep_day$Id)
 ## [1] 24
 ```
 ### Data Summary
-From these data points, I learned there are 33 unique user IDs, not the 30 the dataset claimed. Additionally, there are more users in the daily activity data set than in the sleep dataset, 33 and 24, respectively. Finally, the Activity Date is of type char, not Date, and the data set has no missing values.
+I learned from these data points that there are 33 unique user IDs, not the 30 the dataset claimed. Additionally, there are more users in the daily activity data set than in the sleep dataset, 33 and 24, respectively. Finally, the Activity Date is of type char, not Date, and the data set has no missing values.
 
 Now that the data has been cleaned, I can begin my analysis.
 
 ## Stage 4: Analyze
+### Summarize the Statistics
+First, we are going to check observations in each data frame:
+```r
+nrow(daily_activity)
+
+## [1] 940
+```
+```r
+nrow(sleep_day)
+
+## [1] 413
+```
+
+Find our key statistics from each data frame with pipelining for 'daily_activity':
+```r
+daily_activity %>%
+  select(TotalSteps, SedentaryMinutes, Calories) %>%
+  summary()
+
+##    TotalSteps    SedentaryMinutes    Calories   
+##  Min.   :    0   Min.   :   0.0   Min.   :   0  
+##  1st Qu.: 3790   1st Qu.: 729.8   1st Qu.:1828  
+##  Median : 7406   Median :1057.5   Median :2134  
+##  Mean   : 7638   Mean   : 991.2   Mean   :2304  
+##  3rd Qu.:10727   3rd Qu.:1229.5   3rd Qu.:2793  
+##  Max.   :36019   Max.   :1440.0   Max.   :4900  
+```
+Per these statistics, the average user:
+1. Was only taking 7,406 steps per day.
+   - The CDC recommends a daily minimum of 10,000 steps.
+2. Was spending 1,507.5 minutes of 1440 minutes per day inactive.
+3. Was burning 2,134 calories per day.
+
+Key statistics for the 'sleep_day' data frame using pipelining:
+```r
+sleep_day %>%
+  select(TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed) %>%
+  summary()
+
+##  TotalSleepRecords TotalMinutesAsleep TotalTimeInBed 
+##  Min.   :1.000     Min.   : 58.0      Min.   : 61.0  
+##  1st Qu.:1.000     1st Qu.:361.0      1st Qu.:403.0  
+##  Median :1.000     Median :433.0      Median :463.0  
+##  Mean   :1.119     Mean   :419.5      Mean   :458.6  
+##  3rd Qu.:1.000     3rd Qu.:490.0      3rd Qu.:526.0  
+##  Max.   :3.000     Max.   :796.0      Max.   :961.0  
+```
+Per these statistics, the average user:
+1. Records sleep once per day.
+2. Spends 458.6 minutes (~8 hours) in bed per night.
+3. Sleeps for 419.5 minutes (~7 hours) per night.
+
+### Identifying Trends and Relationships
+#### The Relationship Between Steps and Sedentary Minutes
+Key Questions:
+  - What relationship exists between steps and sedentary minutes?
+  - How can this relationship help inform or better appeal to our target customer base?
+      - How can Bellabeat use this information to get their customers to walk more?
+
+To analyze this, a plot was created:
+```r
+ggplot(data = daily_activity, aes(x = TotalSteps, y = SedentaryMinutes)) +
+  geom_point(color = "darkgoldenrod2") +
+  geom_smooth(color = "deepskyblue1")
+
+## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+```
+![TotalSteps vs. SedentaryMinutes Graph]()
