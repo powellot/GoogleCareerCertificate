@@ -406,7 +406,18 @@ This scatterplot shows a weak negative correlation between TotalSteps and Sedent
 
 #### The Relationship Between Total Steps and Calories Burned
 Key Questions:
+- What relationship exists between time asleep and time in bed?
+- Can users use step count to aid in weight loss?
+- How can Bellabeat's target customers use this information?
 
+To analyze this, a plot was created:
+```r
+ggplot(data = daily_activity, aes(x = TotalSteps, y = Calories)) +
+  geom_point(color = "darkgoldenrod2") +
+  geom_smooth(color = "deepskyblue1")
+
+## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+```
 #### The Relationship Between Total Time Asleep and Total Time in Bed
 Key Questions:
 - What relationship exists between time asleep and time in bed?
@@ -414,6 +425,7 @@ Key Questions:
 - Are there any unexpected trends?
 - How can this help Bellabeat's marketing efforts?
 
+To analyze this, a plot was created:
 ```r
 ggplot(data = sleep_day, aes(x = TotalMinutesAsleep, y = TotalTimeInBed)) +
   geom_point(color = "darkgoldenrod2") +
@@ -423,4 +435,4 @@ ggplot(data = sleep_day, aes(x = TotalMinutesAsleep, y = TotalTimeInBed)) +
 ```
 ![TimeAsleep vs. TimeInBed Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/TimeAsleepVsTimeInBed.png)
 
-The above scatterplot shows a strong positive correlation between time spent in bed and total time asleep each night. This could be used to encourage users to get in bed earlier and therefore get more sleep each night.
+The above scatterplot shows a strong positive correlation between time spent in bed and total time asleep each night. This could be used to encourage users to get in bed earlier and therefore get more sleep each night. By tracking time spent asleep each night, users are able to learn more about their sleeping habits and hopefully improve their sleep each night.
