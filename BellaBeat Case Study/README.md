@@ -400,7 +400,7 @@ ggplot(data = daily_activity, aes(x = TotalSteps, y = SedentaryMinutes)) +
 
 ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
-![TotalSteps vs. SedentaryMinutes Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/SedentaryVsSteps.png)
+![TotalSteps vs. SedentaryMinutes Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/StepsVsSedentary.png)
 
 This scatterplot shows a weak negative correlation between TotalSteps and SedentaryMinutes. Between 0 and 10,000 steps, we can see the Loess smoothing shows a strong decrease in SedentaryMinutes as TotalSteps increase. With this in mind, there is potential for a Bellabeat device to remind customers to move after a preset amount of time sedentary.
 
@@ -419,6 +419,9 @@ ggplot(data = daily_activity, aes(x = TotalSteps, y = Calories)) +
 ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
 ![TotalSteps vs. Calories Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/CaloriesVsSteps.png)
+
+This scatterplot shows a positive correlation between steps taken and calories burned. This data can be used to target customers who are looking to lose or maintain weight and encourage them to increase their daily step count in order to burn more calories and help them achieve their health goals.
+
 #### The Relationship Between Total Time Asleep and Total Time in Bed
 Key Questions:
 - What relationship exists between time asleep and time in bed?
@@ -437,3 +440,27 @@ ggplot(data = sleep_day, aes(x = TotalMinutesAsleep, y = TotalTimeInBed)) +
 ![TimeAsleep vs. TimeInBed Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/TimeAsleepVsTimeInBed.png)
 
 The above scatterplot shows a strong positive correlation between time spent in bed and total time asleep each night. This could be used to encourage users to get in bed earlier and therefore get more sleep each night. By tracking time spent asleep each night, users are able to learn more about their sleeping habits and hopefully improve their sleep each night.
+
+### Merging the Two Datasets
+Since there are more users in the 'daily_activity' datasets than there are in 'sleep_day', 33 compared to 24, respectively, an outer join is used to prevent any filtering of IDs and keeping as many data points as possible.
+```r
+combined_data <- merge(sleep_day, daily_activity, all = TRUE)
+colnames(combined_data)
+
+##  [1] "Id"                       "SleepDay"                 "TotalSleepRecords"       
+##  [4] "TotalMinutesAsleep"       "TotalTimeInBed"           "ActivityDate"            
+##  [7] "TotalSteps"               "TotalDistance"            "TrackerDistance"         
+## [10] "LoggedActivitiesDistance" "VeryActiveDistance"       "ModeratelyActiveDistance"
+## [13] "LightActiveDistance"      "SedentaryActiveDistance"  "VeryActiveMinutes"       
+## [16] "FairlyActiveMinutes"      "LightlyActiveMinutes"     "SedentaryMinutes"        
+## [19] "Calories"
+```
+Taking a look at the number of unique users:
+```r
+n_distinct(combined_data$Id)
+
+## [1] 33
+```
+
+### Explore User Activity (minutes)
+
