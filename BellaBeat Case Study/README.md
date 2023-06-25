@@ -418,6 +418,7 @@ ggplot(data = daily_activity, aes(x = TotalSteps, y = Calories)) +
 
 ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
+![TotalSteps vs. Calories Graph](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/CaloriesVsSteps.png)
 #### The Relationship Between Total Time Asleep and Total Time in Bed
 Key Questions:
 - What relationship exists between time asleep and time in bed?
