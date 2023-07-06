@@ -463,4 +463,28 @@ n_distinct(combined_data$Id)
 ```
 
 ### Explore User Activity (minutes)
+```r
+Sedentary <- sum(combined_data$SedentaryMinutes)
+Active <- sum(combined_data$VeryActiveMinutes)
+Fairly <- sum(combined_data$FairlyActiveMinutes)
+Light <- sum(combined_data$LightlyActiveMinutes)
 
+x <- c(Sedentary, Light, Fairly, Active)
+labels <- c("Sedentary", "Lightly Active", "Fairly Active", "Very Active")
+
+piepercent <- round(100 * x / sum(x), 1)
+
+labels <- paste0(piepercent, "%")
+
+color = brewer.pal(length(piepercent), "Set2")
+
+pie(x, labels, main = "Active Minutes (Pie Chart)", col = color, cex = 0.55)
+legend("topright", c("Sedentary", "Lightly Active", "Fairly Active", "Very Active"), cex = 0.7, fill = color)
+```
+![Active Minutes (Pie Chart)](https://github.com/powellot/GoogleCareerCertificate/blob/main/Resources/ActiveMinutesPieChart.png)
+
+The main takeaway from this pie chart is that we can see users spend 77% of their day inactive with only 1.6% of the day in a very active state. This information can be used to target Bellabeat customers and have them increase their active minutes per day. 
+
+Joining a local gym, walking or biking to work, etc. can all be methods of increasing their daily active minutes. This allows Bellabeat to target customers individually as well as help them to become more healthy.
+
+### Explore Activity Frequency Throughout the Week
